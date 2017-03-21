@@ -58,36 +58,13 @@
         <!-- Introduction Section -->
         <div class="container introduction-section">
             <div class="row">
+                @foreach($categories as $category)
                 <div class="col-md-4 col-sm-6 col-xs-6 introdction-block">
-                    <img src="images/intro-lg-1.jpg" alt="introduction-1" width="370" height="281"/>
-                    <h3><a href="#" title="Agricultural Processing">马弗炉</a></h3>
-                    <span>最基础的炉型</span>
+                    <a href="/products/categories/{{$category->id}}"><img src="{{$category->category_pic}}" alt="{{$category->name}}" width="370" height="281"/></a>
+                    <h3><a href="/products/categories/{{$category->id}}" title="{{$category->name}}">{{$category->name}}</a></h3>
+                    <span>{{$category->category_des}}</span>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 introdction-block">
-                    <img src="images/intro-lg-2.jpg" alt="introduction-2" width="370" height="281"/>
-                    <h3><a href="#" title="Machinery & Tools">真空炉</a></h3>
-                    <span>Objectively innovate empowered</span>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 introdction-block">
-                    <img src="images/intro-lg-3.jpg" alt="introduction-3" width="370" height="281"/>
-                    <h3><a href="#" title="Coal & Solid Fuels">气氛炉</a></h3>
-                    <span>Objectively innovate empowered </span>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 introdction-block">
-                    <img src="images/intro-lg-1.jpg" alt="introduction-1" width="370" height="281"/>
-                    <h3><a href="#" title="Agricultural Processing">管式炉</a></h3>
-                    <span>Objectively innovate empowered</span>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 introdction-block">
-                    <img src="images/intro-lg-2.jpg" alt="introduction-2" width="370" height="281"/>
-                    <h3><a href="#" title="Machinery & Tools">Machinery & Tools</a></h3>
-                    <span>Objectively innovate empowered</span>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6 introdction-block">
-                    <img src="images/intro-lg-3.jpg" alt="introduction-3" width="370" height="281"/>
-                    <h3><a href="#" title="Coal & Solid Fuels">Coal & Solid Fuels</a></h3>
-                    <span>Objectively innovate empowered </span>
-                </div>
+                @endforeach
             </div>
         </div><!-- Introduction Section /- -->
 

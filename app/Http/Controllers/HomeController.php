@@ -95,14 +95,13 @@ class HomeController extends Controller
     {
         $form['name'] = $request->name;
         $form['email']=$request->email;
-        $form['tel']=$request->tel;
         $form['message']=$request->message;
         $form['url']=$request->url;
 
         Mail::send('emails.mail',['form'=>$form], function ($message) {
-            $message->from('web@belislaserbeauty.com', 'website');
-            $message->to(['sunny.belis@hotmail.com','info@belislaserbeauty.com','chaos29092@gmail.com',]);
-            $message->subject('Website Request');
+            $message->from('info@e.furnace-tech.com', 'chaos');
+            $message->to(['info@lab-furnace.com','chaos29092@gmail.com',]);
+            $message->subject('诺泰网站留言');
         });
 
         return redirect('/submit_ok');

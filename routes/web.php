@@ -25,6 +25,8 @@ Route::get('news','HomeController@news');
 Route::get('tech','HomeController@tech');
 Route::get('articles/{page}','HomeController@new_detail');
 
+Route::post('contact_submit','HomeController@submit');
+Route::get('submit_ok','HomeController@submit_ok');
 //admin
 Auth::routes();
 

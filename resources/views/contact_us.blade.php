@@ -32,28 +32,29 @@
                         <div class="section-header">
                             <h3>在线留言</h3>
                         </div>
-                        <form class="contactus-form" id="contact-form2">
+                        <form class="contactus-form" method="post" action="/contact_submit">
+                            {{csrf_field()}}
+                            <input type="hidden" name="url" value="{{url()->current()}}">
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <input type="text" required="" placeholder="Your Name" id="input_name" class="form-control" name="contact-name">
+                                    <input type="text" required="" placeholder="名字" id="input_name" class="form-control" name="name">
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <input type="email" required="" placeholder="Your Email" id="input_email" class="form-control" name="contact-email">
+                                    <input type="email" required="" placeholder="邮箱" id="input_email" class="form-control" name="email">
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <textarea placeholder="Message" id="textarea_message" class="form-control" name="contact-message" rows="5"></textarea>
+                                    <textarea placeholder="留言内容" id="textarea_message" class="form-control" name="message" rows="5"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <input type="submit" name="post" title="Send" id="btn_submit2" value="Send Request">
+                                    <input type="submit" name="post" title="Send" id="btn_submit2" value="发送留言">
                                 </div>
                             </div>
-                            <div class="alert-msg" id="alert-msg"></div>
                         </form>
                     </div>
                     <div class="col-md-4 col-sm-12 col-xs-12">
